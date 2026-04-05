@@ -1,0 +1,17 @@
+{
+  "description": "Write-protection hook for zap diagnostic agent",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/write-guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
