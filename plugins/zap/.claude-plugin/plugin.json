@@ -1,0 +1,8 @@
+{
+  "name": "zap",
+  "description": "Diagnose it, fix it, zap it. Instant bug elimination for Claude Code.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Darin Haener"
+  }
+}
