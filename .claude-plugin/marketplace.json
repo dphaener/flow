@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "flow",
+  "description": "Marketplace for Claude Code workflow plugins",
+  "owner": {
+    "name": "Darin Haener"
+  },
+  "plugins": [
+    {
+      "name": "shipit",
+      "description": "Plan it, execute it, ship it. Structured workflow for Claude Code.",
+      "source": "./plugins/shipit",
+      "category": "productivity"
+    },
+    {
+      "name": "zap",
+      "description": "Diagnose it, fix it, zap it. Instant bug elimination for Claude Code.",
+      "source": "./plugins/zap",
+      "category": "debugging"
+    }
+  ]
+}
