@@ -1,0 +1,1 @@
+/Users/darinhaener/code/flow/plugins/zap/skills/diagnose/SKILL.md

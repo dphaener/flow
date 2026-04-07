@@ -1,0 +1,50 @@
+{
+    "name": "zap",
+    "description": "Diagnose it, fix it, zap it. Instant bug elimination for Claude Code.",
+    "version": "1.0.0",
+    "author": {
+        "name": "Darin Haener"
+    }
+}
+plugin.json: OK
+{
+    "description": "Write-protection hook for zap diagnostic agent",
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Write|Edit|MultiEdit",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/write-guard.py",
+                        "timeout": 10
+                    }
+                ]
+            }
+        ]
+    }
+}
+hooks.json: OK
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "flow",
+    "description": "Marketplace for Claude Code workflow plugins",
+    "owner": {
+        "name": "Darin Haener"
+    },
+    "plugins": [
+        {
+            "name": "shipit",
+            "description": "Plan it, execute it, ship it. Structured workflow for Claude Code.",
+            "source": "./plugins/shipit",
+            "category": "productivity"
+        },
+        {
+            "name": "zap",
+            "description": "Diagnose it, fix it, zap it. Instant bug elimination for Claude Code.",
+            "source": "./plugins/zap",
+            "category": "debugging"
+        }
+    ]
+}
+marketplace.json: OK

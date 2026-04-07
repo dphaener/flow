@@ -1,0 +1,10 @@
+/Users/darinhaener/code/flow/plugins/zap/.claude-plugin/plugin.json
+/Users/darinhaener/code/flow/plugins/zap/commands/diagnose.md
+/Users/darinhaener/code/flow/plugins/zap/commands/fix.md
+/Users/darinhaener/code/flow/plugins/zap/hooks/.gitkeep
+/Users/darinhaener/code/flow/plugins/zap/hooks/hooks.json
+/Users/darinhaener/code/flow/plugins/zap/hooks/write-guard.py
+/Users/darinhaener/code/flow/plugins/zap/LICENSE
+/Users/darinhaener/code/flow/plugins/zap/README.md
+/Users/darinhaener/code/flow/plugins/zap/skills/diagnose/SKILL.md
+/Users/darinhaener/code/flow/plugins/zap/skills/fix/SKILL.md

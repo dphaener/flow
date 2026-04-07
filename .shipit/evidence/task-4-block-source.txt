@@ -1,0 +1,8 @@
+QA Scenario B: Electrician blocked from source files
+Command: echo '{"tool_name":"Write","tool_input":{"file_path":"app/models/user.rb"}}' | CLAUDE_AGENT_NAME=electrician python3 plugins/zap/hooks/write-guard.py; echo "EXIT: $?"
+
+Output (stderr):
+[zap write-guard] The Electrician can only write to .zap/ files. Attempted to modify: app/models/user.rb. Use /zap:fix to apply code changes.
+EXIT: 2
+
+RESULT: PASS (expected exit code 2)

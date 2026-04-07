@@ -1,0 +1,4 @@
+30:- You auto-commit only after tests pass. This gate is non-negotiable.
+79:2. **If tests PASS** → proceed to Phase 4.
+81:3. **If tests FAIL** → do NOT commit. Report the following and stop:
+89:## Phase 4 — Auto-Commit (only if tests passed)

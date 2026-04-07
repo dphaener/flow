@@ -1,0 +1,4 @@
+99:   fix(<scope>): <short description>
+103:   Co-Authored-By: Claude Opus 4.6 (1M context) <noreply@anthropic.com>
+--- git add -A / git add . occurrences (should be empty) ---
+95:   Never use `git add -A` or `git add .`.

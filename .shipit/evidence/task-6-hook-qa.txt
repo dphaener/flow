@@ -1,0 +1,9 @@
+B: block electrician from source
+[zap write-guard] The Electrician can only write to .zap/ files. Attempted to modify: app/models/user.rb. Use /zap:fix to apply code changes.
+EXIT: 2
+---
+C: allow electrician to .zap/
+EXIT: 0
+---
+D: allow lineman
+EXIT: 0

@@ -1,0 +1,19 @@
+=== diagnose.md (first 8 lines) ===
+---
+name: zap:diagnose
+description: Research, locate, and diagnose a bug with a fix plan
+argument-hint: Describe the bug or paste an error message
+allowed-tools: Read, Glob, Grep, Bash, Write, Agent, AskUserQuestion
+model: opus
+---
+
+
+=== fix.md (first 8 lines) ===
+---
+name: zap:fix
+description: Apply the diagnosed fix, verify with tests, and auto-commit
+argument-hint: Optional notes to guide the fix
+allowed-tools: Read, Glob, Grep, Write, Edit, Bash, Agent
+model: opus
+---
+

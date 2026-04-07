@@ -1,0 +1,6 @@
+14:Check whether `.zap/diagnosis.md` exists.
+28:- You are a fix specialist. Your job is to read `.zap/diagnosis.md` and apply what it says — nothing more.
+37:1. **Read `.zap/diagnosis.md` fully.** Understand:
+59:1. Follow the "Recommended Fix" section from `.zap/diagnosis.md` step by step.
+76:1. Run the test command from the "Verification" section of `.zap/diagnosis.md`.
+19:No diagnosis found. Run /zap:diagnose first to identify the bug.

@@ -1,0 +1,13 @@
+diagnose SKILL: OK
+fix SKILL: OK
+write-guard: OK
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/diagnose/SKILL.md`
+diagnose.md ref: OK
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/fix/SKILL.md`
+fix.md ref: OK
+---
+NOTE: References use shell-exec syntax: !`cat ${CLAUDE_PLUGIN_ROOT}/skills/diagnose/SKILL.md`
+Exact lines in diagnose.md:
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/diagnose/SKILL.md`
+Exact lines in fix.md:
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/fix/SKILL.md`

@@ -1,0 +1,8 @@
+{
+  "name": "shipit",
+  "description": "Plan it, execute it, ship it. Structured workflow for Claude Code.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Darin Haener"
+  }
+}

@@ -1,0 +1,7 @@
+QA Scenario D: Lineman not blocked
+Command: echo '{"tool_name":"Write","tool_input":{"file_path":"app/models/user.rb"}}' | CLAUDE_AGENT_NAME=lineman python3 plugins/zap/hooks/write-guard.py; echo "EXIT: $?"
+
+Output:
+EXIT: 0
+
+RESULT: PASS (expected exit code 0)

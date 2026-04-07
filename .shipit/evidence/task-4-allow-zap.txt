@@ -1,0 +1,7 @@
+QA Scenario C: Electrician allowed to write .zap/diagnosis.md
+Command: echo '{"tool_name":"Write","tool_input":{"file_path":".zap/diagnosis.md"}}' | CLAUDE_AGENT_NAME=electrician python3 plugins/zap/hooks/write-guard.py; echo "EXIT: $?"
+
+Output:
+EXIT: 0
+
+RESULT: PASS (expected exit code 0)
