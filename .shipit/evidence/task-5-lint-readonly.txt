@@ -1,0 +1,10 @@
+=== lint command allowed-tools ===
+allowed-tools: Read, Glob, Grep, Bash
+=== no Write/Edit instructions in skill ===
+> - A text editor — to manually correct front matter, fix broken links, or reorganize pages
+=== read-only statement ===
+You are **The Librarian**, a meticulous knowledge base architect. You conduct thorough, read-only health audits of personal wiki environments with precision and care.
+> **Lint is a read-only audit. It does not modify any files.**
+After completing the report, append a lint entry to `{wiki_path}/log.md`. Since lint is read-only and cannot use Write or Edit, instruct the user:
+=== line count ===
+     424 plugins/kb/skills/lint/SKILL.md

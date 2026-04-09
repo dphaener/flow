@@ -1,0 +1,33 @@
+=== orphan ===
+### Check A — Orphan Pages
+Files that appear on disk but not in the index are **orphan pages**. They exist but the index doesn't know about them.
+- **Orphan pages** [{count}]: {list of pages on disk not in index.md, or "none"}
+> - `/kb:capture` — to create missing pages or fix orphans
+- Orphan pages (Warning): files on disk not listed in index.md
+=== ghost ===
+### Check B — Ghost Entries
+Entries pointing to non-existent files are **ghost entries**. The index references pages that are gone.
+Distinguish from wanted pages by checking whether the link target appears to have ever existed (is it in `index.md`? Is there a ghost entry for it?). If it never existed and isn't in the index, it is more likely a broken link than an intentional wanted page.
+- **Ghost entries** [{count}]: {list of index.md entries pointing to missing files, or "none"}
+- Ghost entries (Critical): index.md pointing to missing files
+=== broken ===
+### Check I — Broken Links
+This is a more precise version of Check E. While Check E identifies wanted pages (forward references that are intentional), broken links are cases where a link text does NOT match any known page title — likely due to typos, renames, or deletions.
+Distinguish from wanted pages by checking whether the link target appears to have ever existed (is it in `index.md`? Is there a ghost entry for it?). If it never existed and isn't in the index, it is more likely a broken link than an intentional wanted page.
+- **Broken links** [{count}]: {list of [[links]] that are definitively broken, or "none"}
+{If issues exist}: Address Critical issues first — they indicate broken navigation or missing content. Warnings reduce long-term maintainability. Suggestions are optional improvements.
+> - A text editor — to manually correct front matter, fix broken links, or reorganize pages
+- Broken links (Critical): [[links]] to formerly-known pages that no longer exist
+=== wanted ===
+### Check E — Wanted Pages (Dangling Wiki Links)
+For each `[[Link Target]]` found, check whether any file in `pages/` has a `# Link Target` heading that matches (case-insensitive). If no matching page exists, this is a **wanted page** — a link that signals a page that should be created.
+Note: Wanted pages are NOT errors. They are intentional forward references per the wiki's cross-referencing rules. Report them as **Suggestions**.
+This is a more precise version of Check E. While Check E identifies wanted pages (forward references that are intentional), broken links are cases where a link text does NOT match any known page title — likely due to typos, renames, or deletions.
+Distinguish from wanted pages by checking whether the link target appears to have ever existed (is it in `index.md`? Is there a ghost entry for it?). If it never existed and isn't in the index, it is more likely a broken link than an intentional wanted page.
+- **Wanted pages** [{count}]: {list of [[link targets]] that don't exist yet — intentional forward references, or "none"}
+- Wanted pages (Suggestion): forward references — intentional, not errors
+=== isolated ===
+### Check H — Isolated Pages (No Wiki Links)
+Pages with no outbound links AND no inbound links from other pages are **isolated pages** — they exist in a vacuum, disconnected from the knowledge graph.
+- **Isolated pages** [{count}]: {list of pages with no inbound or outbound wiki links, or "none"}
+- Isolated pages (Warning): no inbound or outbound wiki links (disconnected nodes)
