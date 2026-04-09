@@ -1,0 +1,16 @@
+QA Scenario 2 — Tool Scoping
+Run at: 2026-04-08
+
+$ grep "allowed-tools" plugins/kb/commands/*.md
+plugins/kb/commands/capture.md:allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+plugins/kb/commands/ingest.md:allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebFetch, Agent
+plugins/kb/commands/init.md:allowed-tools: Read, Write, Bash, AskUserQuestion
+plugins/kb/commands/lint.md:allowed-tools: Read, Glob, Grep, Bash
+
+Verification:
+- init:    has AskUserQuestion ✓    does NOT have WebFetch ✓
+- ingest:  has WebFetch ✓           does NOT have AskUserQuestion ✓
+- capture: does NOT have Write/Edit violations (Write+Edit are allowed per spec) ✓
+- lint:    does NOT have Write ✓    does NOT have Edit ✓   (read-only) ✓
+
+RESULT: PASS — all tool scoping constraints satisfied

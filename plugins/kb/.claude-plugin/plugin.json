@@ -1,0 +1,8 @@
+{
+  "name": "kb",
+  "description": "Build it, capture it, know it. A structured knowledge base for Claude Code.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Darin Haener"
+  }
+}

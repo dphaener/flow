@@ -1,0 +1,63 @@
+QA Scenario 1 — Plugin Structure
+Run at: 2026-04-08
+
+$ ls -la plugins/kb/.claude-plugin/
+drwxr-xr-x darinhaener staff  96 B Wed Apr  8 20:41:33 2026 .
+drwxr-xr-x darinhaener staff 224 B Wed Apr  8 20:41:42 2026 ..
+.rw-r--r-- darinhaener staff 183 B Wed Apr  8 20:41:33 2026 plugin.json
+
+$ cat plugins/kb/.claude-plugin/plugin.json | python3 -m json.tool
+{
+    "name": "kb",
+    "description": "Build it, capture it, know it. A structured knowledge base for Claude Code.",
+    "version": "1.0.0",
+    "author": {
+        "name": "Darin Haener"
+    }
+}
+
+=== init ===
+---
+name: kb:init
+description: Initialize a new knowledge base wiki at the given path
+argument-hint: [wiki-path]
+allowed-tools: Read, Write, Bash, AskUserQuestion
+model: opus
+---
+
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/init/SKILL.md`
+
+=== ingest ===
+---
+name: kb:ingest
+description: Ingest a URL or file path into the knowledge base wiki
+argument-hint: <url-or-file-path>
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash, WebFetch, Agent
+model: opus
+---
+
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/ingest/SKILL.md`
+
+=== capture ===
+---
+name: kb:capture
+description: Capture knowledge from the current conversation context into the wiki
+argument-hint:
+allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+model: opus
+---
+
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/capture/SKILL.md`
+
+=== lint ===
+---
+name: kb:lint
+description: Lint and validate the configured knowledge base wiki
+argument-hint:
+allowed-tools: Read, Glob, Grep, Bash
+model: opus
+---
+
+!`cat ${CLAUDE_PLUGIN_ROOT}/skills/lint/SKILL.md`
+
+RESULT: PASS — plugin.json valid JSON, all 4 command files present with correct frontmatter
