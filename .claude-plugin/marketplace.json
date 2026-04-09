@@ -17,6 +17,12 @@
       "description": "Diagnose it, fix it, zap it. Instant bug elimination for Claude Code.",
       "source": "./plugins/zap",
       "category": "debugging"
+    },
+    {
+      "name": "kb",
+      "description": "Personal knowledge base — ingest sources, capture insights, maintain a structured wiki",
+      "source": "./plugins/kb",
+      "category": "knowledge"
     }
   ]
 }
