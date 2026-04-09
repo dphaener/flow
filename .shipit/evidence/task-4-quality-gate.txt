@@ -1,0 +1,13 @@
+=== decline/quality language ===
+- Solutions to non-obvious or tricky problems that required real reasoning
+- Facts, behaviors, or quirks of tools/systems that aren't obvious from documentation
+- Trivial chat, pleasantries, or conversational filler
+- Routine operations executed without novel insight (ran a command, it worked)
+- Information that is obvious, well-known, or easily found in basic documentation
+### Step 5 — Quality Gate
+**If nothing is worth capturing**, decline gracefully:
+**Stop here** — do not proceed to Step 6 if the quality gate fails. Do not create any files.
+| **Quality over quantity** | Decline to capture if there is nothing genuinely worth preserving. |
+After completing the capture operation (whether successful or declined), append a brief summary to `.shipit/notepads/kb-plugin/learnings.md` if that file exists in the current project:
+=== line count ===
+     292 plugins/kb/skills/capture/SKILL.md
