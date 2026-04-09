@@ -1,0 +1,6 @@
+Scenario 2 — Allow writes inside wiki
+Command: echo '{...inside wiki...}' | WIKI_CONFIG=/tmp/test-kb-config.json python3 write-guard.py
+Output: 
+Exit code: 0
+Expected: 0
+PASS: YES

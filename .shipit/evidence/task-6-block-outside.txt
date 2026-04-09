@@ -1,0 +1,6 @@
+Scenario 1 — Block writes outside wiki
+Command: echo '{...outside...}' | WIKI_CONFIG=/tmp/test-kb-config.json python3 write-guard.py
+Output: kb write-guard: writes are restricted to your wiki directory (/private/tmp/test-wiki). Attempted: /private/tmp/other-project/file.txt
+Exit code: 2
+Expected: 2
+PASS: YES

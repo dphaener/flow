@@ -1,0 +1,17 @@
+{
+  "description": "Write guard for kb plugin — restricts writes to wiki directory, protects sources/ immutability",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/write-guard.py",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

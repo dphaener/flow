@@ -22,6 +22,19 @@
 - Repair mode only writes missing files — does not overwrite existing content
 - Skill is 564 lines — well over 200 line requirement
 
+## T6: Write-Guard Hook (2026-04-08)
+
+- hooks.json uses exact structure: description + hooks.PreToolUse[].matcher + hooks[].type/command/timeout
+- `${CLAUDE_PLUGIN_ROOT}` is the env var for the plugin root in hook commands
+- kb write-guard uses NO agent name check (unlike shipit/zap) — applies to all agents universally
+- WIKI_CONFIG env var overrides default config path (~/.config/kb/config.json) for testing
+- Fail-open order: missing config → allow, malformed JSON → allow, missing wiki_path key → allow
+- Path resolution: use os.path.realpath(os.path.expanduser(path)) — on macOS /tmp resolves to /private/tmp
+- is_within() helper: strip trailing sep, add sep back, then use startswith() — avoids /foo/bar matching /foo/baz
+- sources/ immutability: check os.path.exists(target) AFTER confirming target is within sources/
+- New files in sources/ are allowed (exit 0) — only EXISTING files are blocked (exit 2)
+- All 4 QA scenarios passed: block-outside, allow-wiki, protect-sources, allow-new-source
+
 ## T4: Capture Skill (2026-04-08)
 
 - capture has no AskUserQuestion — present plan and proceed immediately without waiting

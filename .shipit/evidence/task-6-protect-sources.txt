@@ -1,0 +1,6 @@
+Scenario 3 — Protect existing sources
+Command: echo '{...existing source...}' | WIKI_CONFIG=/tmp/test-kb-config.json python3 write-guard.py
+Output: kb write-guard: sources/ files are immutable after initial creation. To update knowledge, ingest a new source and update the relevant wiki pages.
+Exit code: 2
+Expected: 2
+PASS: YES
