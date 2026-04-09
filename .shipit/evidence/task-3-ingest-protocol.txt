@@ -1,0 +1,38 @@
+=== config.json ===
+Read ~/.config/kb/config.json
+  > The Librarian cannot proceed. No knowledge base configuration was found at `~/.config/kb/config.json`.
+### Step 2: Resolve Wiki Path from `~/.config/kb/config.json`
+Read `~/.config/kb/config.json` (already done in the guard clause). Extract `wiki_path`. This is the root of all wiki operations.
+=== WebFetch ===
+Use WebFetch to retrieve the content:
+WebFetch: {url}
+If WebFetch fails (connection error, 404, 403, timeout, or returns no content):
+If WebFetch succeeds, store the fetched content as `{raw_content}` for the remainder of this protocol.
+| URLs (http/https) | Yes | Fetched via WebFetch |
+=== sources/ ===
+Confirm that `CLAUDE.md`, `index.md`, `log.md`, and `sources/` all exist. If any are missing, announce:
+### Step 6: Check for Duplicate Source in sources/
+Glob: {wiki_path}/sources/{domain}_{slug}_*.md
+Glob: {wiki_path}/sources/{original-filename-base}_*.{ext}
+### Step 7: Store Raw Source in sources/
+=== index.md ===
+Confirm that `CLAUDE.md`, `index.md`, `log.md`, and `sources/` all exist. If any are missing, announce:
+- index.md format: grouped by category, one-line summaries, alphabetical order
+### Step 5: Read Current index.md
+=== log.md ===
+Confirm that `CLAUDE.md`, `index.md`, `log.md`, and `sources/` all exist. If any are missing, announce:
+- log.md format: append-only, `## [YYYY-MM-DD] operation | Subject`
+### Step 11: Append to log.md
+=== conflict ===
+> This ingest will be treated as an **update**. New information will be merged into existing pages. Conflicting information will be noted in "Conflicting Views" sections rather than overwriting.
+**Conflict resolution**: If new information from this source contradicts information already in the page, do NOT silently overwrite the existing content. Instead, append a section:
+## Conflicting Views
+> **Conflicts detected**: {count — if 0, say "None"}
+> {If conflicts: list the pages where "Conflicting Views" sections were added}
+=== duplicate ===
+- Avoid creating duplicate pages for topics that already have entries
+### Step 6: Check for Duplicate Source in sources/
+> The Librarian found an existing source for this content: `{existing_source_filename}`.
+- **View A** (from [[{existing source title or page}]]): {summary of existing claim}
+=== line count ===
+     462 plugins/kb/skills/ingest/SKILL.md

@@ -1,0 +1,16 @@
+=== PDF/binary/image rejection ===
+If the file has any of the following extensions, or appears to be a binary file, decline immediately:
+- `.pdf` — PDF documents
+- `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.svg`, `.bmp`, `.tiff` — Image files
+> **Why**: Binary files, images, PDFs, and rich document formats cannot be reliably converted to wiki knowledge without specialized parsing tools that are outside The Librarian's scope.
+> **What to do instead**: If you have a PDF or document you'd like to ingest, please convert it to plain text or Markdown first, then run `kb:ingest` on the converted file.
+| `.pdf` | **No** | Convert to text first |
+| Images (`.png`, `.jpg`, etc.) | **No** | Cannot extract knowledge from images |
+| Executables (`.exe`, `.bin`) | **No** | Binary files not processable |
+6. **Never process PDF, binary, or image files** — decline clearly and explain what's supported
+=== decline language ===
+**Unsupported formats — decline with a clear message:**
+If the file has any of the following extensions, or appears to be a binary file, decline immediately:
+Decline message:
+> The Librarian cannot process this file.
+## Quick Reference: Supported vs. Unsupported Formats
