@@ -1,0 +1,26 @@
+=== concepts/ ===
+│   ├── concepts/          ← Abstract ideas, patterns, principles
+│   ├── entities/          ← Named things: people, tools, projects
+│   ├── references/        ← How-tos, cheat sheets, API docs
+--
+│   ├── concepts/          ← Abstract ideas, patterns, principles, methodologies
+│   ├── entities/          ← Named things: people, companies, tools, projects
+│   ├── references/        ← Practical how-tos, cheat sheets, API docs
+--
+### `concepts/` — Abstract Ideas
+
+=== entities/ ===
+│   ├── entities/          ← Named things: people, tools, projects
+│   ├── references/        ← How-tos, cheat sheets, API docs
+│   └── journal/           ← Dated reflections, learning logs
+--
+│   ├── entities/          ← Named things: people, companies, tools, projects
+│   ├── references/        ← Practical how-tos, cheat sheets, API docs
+│   └── journal/           ← Dated reflections, learning logs, session notes
+--
+### `entities/` — Named Things
+
+=== decision rule ===
+Every page lives in exactly one category. Use the decision rule below to classify before creating a page.
+## Decision Rule
+> **If it's a thing, it's an entity. If it's an idea, it's a concept. If it tells you how to do something, it's a reference. If it's tied to a specific date or experience, it's a journal entry.**

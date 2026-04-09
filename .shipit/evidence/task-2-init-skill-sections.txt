@@ -1,0 +1,26 @@
+=== Librarian mention count ===
+10
+=== AskUserQuestion ===
+- Use `AskUserQuestion` to ask:
+Use `AskUserQuestion` to ask the user for their desired wiki location:
+=== non-empty dir handling ===
+Before asking for any input, check whether `~/.config/kb/config.json` already exists:
+## Guard Clause 3: Non-Empty Directory Check
+Before creating anything, check whether `{wiki_path}` already exists and contains files:
+  > The Librarian cannot initialize here. The directory `{wiki_path}` already exists and is not empty.
+  > Initializing into a non-empty directory risks overwriting your existing content. The Librarian refuses to do this.
+- Non-empty directory: hard refuse, no overwrite, clear error message
+=== CLAUDE.md ===
+- Check whether the wiki at that path is intact (look for `CLAUDE.md`, `index.md`, `log.md`)
+├── CLAUDE.md              ← LLM instructions and wiki schema
+### Step 2: Write CLAUDE.md
+Write `{wiki_path}/CLAUDE.md` with exactly this content:
+**IMPORTANT**: This file is user-owned. Do not modify CLAUDE.md during normal wiki operations (capture, ingest, lint). CLAUDE.md may only be updated if the user explicitly requests a change to the wiki schema or conventions.
+=== config.json ===
+Before asking for any input, check whether `~/.config/kb/config.json` already exists:
+Read ~/.config/kb/config.json
+    └── config.json        ← Local wiki config
+    └── config.json        ← Wiki configuration
+**File 1**: `{wiki_path}/.kb/config.json`
+=== line count ===
+     564 /Users/darinhaener/code/flow/plugins/kb/skills/init/SKILL.md
