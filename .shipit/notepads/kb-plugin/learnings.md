@@ -43,3 +43,13 @@
 - Sources field uses "Conversation context — {topic}, {date}" format — distinguishes from ingested sources
 - "No transcripts" rule stated in both prose instructions and the constraints table for redundancy
 - Skill is 292 lines — well over 100 line requirement
+
+## T7: Marketplace Registration + README (2026-04-08)
+
+- marketplace.json uses a top-level `plugins` array — append to it, never replace existing entries
+- kb entry: name, description, source ("./plugins/kb"), category ("knowledge")
+- README format follows zap pattern (concise) rather than shipit (exhaustive cast/workflow diagrams)
+- README sections: overview, installation, quick start, commands (one per heading), wiki structure, write guard, credits
+- No emojis in README per plan requirement
+- Credits section must name both Karpathy (original LLM Wiki) and Rohit Ghumare (v2 extension)
+- QA: validate JSON with `python3 -m json.tool`, verify plugin names list contains all three entries

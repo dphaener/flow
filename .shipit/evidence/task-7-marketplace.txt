@@ -1,0 +1,64 @@
+=== Valid JSON ===
+{
+    "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+    "name": "flow",
+    "description": "Marketplace for Claude Code workflow plugins",
+    "owner": {
+        "name": "Darin Haener"
+    },
+    "plugins": [
+        {
+            "name": "shipit",
+            "description": "Plan it, execute it, ship it. Structured workflow for Claude Code.",
+            "source": "./plugins/shipit",
+            "category": "productivity"
+        },
+        {
+            "name": "zap",
+            "description": "Diagnose it, fix it, zap it. Instant bug elimination for Claude Code.",
+            "source": "./plugins/zap",
+            "category": "debugging"
+        },
+        {
+            "name": "kb",
+            "description": "Personal knowledge base \u2014 ingest sources, capture insights, maintain a structured wiki",
+            "source": "./plugins/kb",
+            "category": "knowledge"
+        }
+    ]
+}
+=== Plugin names ===
+['shipit', 'zap', 'kb']
+=== README exists ===
+.rw-r--r-- darinhaener staff 4.2 KB Wed Apr  8 20:50:36 2026 /Users/darinhaener/code/flow/plugins/kb/README.md
+=== README excerpt ===
+# kb
+
+Personal knowledge base — ingest sources, capture insights, maintain a structured wiki.
+
+## Overview
+
+kb is a Claude Code plugin for building and maintaining a personal knowledge base wiki. It is inspired by Karpathy's LLM Wiki pattern (a markdown wiki managed entirely by an LLM) and extended by Rohit Ghumare's v2 approach to structured ingestion pipelines.
+
+The plugin treats your wiki as a living document. Sources are ingested and summarized into topic files. Insights from active conversations are captured without leaving your workflow. A lint command audits the wiki for structural health and consistency.
+
+## Installation
+
+```bash
+# Add the flow marketplace
+claude plugin marketplace add <flow-marketplace-url>
+
+# Install kb
+claude plugin install kb
+```
+
+## Quick Start
+
+```
+1. /kb:init ~/wiki
+   → Creates the wiki scaffold at ~/wiki with index, log, and config
+
+2. /kb:ingest https://example.com/article
+   → Fetches, summarizes, and files the article under the right topic
+
+3. /kb:capture
