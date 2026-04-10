@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "flow",
-  "description": "Marketplace for Claude Code workflow plugins",
   "version": "1.1.0",
+  "description": "Marketplace for Claude Code workflow plugins",
   "owner": {
     "name": "Darin Haener"
   },
@@ -10,19 +10,34 @@
     {
       "name": "shipit",
       "description": "Plan it, execute it, ship it. Structured workflow for Claude Code.",
-      "source": "./plugins/shipit",
+      "source": {
+        "source": "git-subdir",
+        "url": "dphaener/flow",
+        "path": "plugins/shipit",
+        "ref": "main"
+      },
       "category": "productivity"
     },
     {
       "name": "zap",
       "description": "Diagnose it, fix it, zap it. Instant bug elimination for Claude Code.",
-      "source": "./plugins/zap",
+      "source": {
+        "source": "git-subdir",
+        "url": "dphaener/flow",
+        "path": "plugins/zap",
+        "ref": "main"
+      },
       "category": "debugging"
     },
     {
       "name": "kb",
       "description": "Personal knowledge base — ingest sources, capture insights, maintain a structured wiki",
-      "source": "./plugins/kb",
+      "source": {
+        "source": "git-subdir",
+        "url": "dphaener/flow",
+        "path": "plugins/kb",
+        "ref": "main"
+      },
       "category": "knowledge"
     }
   ]
